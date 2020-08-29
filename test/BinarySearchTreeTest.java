@@ -136,6 +136,20 @@ public class BinarySearchTreeTest {
 	}
 	
 	@Test
+	public void searchOneTest() {
+		bst.insert(5);
+		assertTrue(bst.search(5));
+	}
+	
+	@Test
+	public void deleteOneTest() {
+		bst.insert(5);
+		assertTrue(bst.search(5));
+		bst.delete(5);
+		assertFalse(bst.search(5));
+	}
+	
+	@Test
 	public void searchBalancedTest() {
 		bst.insert(2);
 		bst.insert(3);
