@@ -1,21 +1,21 @@
-public class DLinkedList {
+public class DLinkedList<T> {
 
 	private class Node {
-		private int value;
+		private T value;
 		private Node nextNode;
 		private Node prevNode;
 
-		public Node(int v) {
+		public Node(T v) {
 			value = v;
 			nextNode = null;
 			prevNode = null;
 		}
 
-		public int getValue() {
+		public T getValue() {
 			return value;
 		}
 
-		public void setValue(int v) {
+		public void setValue(T v) {
 			value = v;
 		}
 		
@@ -46,19 +46,19 @@ public class DLinkedList {
 		tailNode = null;
 	}
 	
-	public Object getHeadValue(){
+	public T getHeadValue(){
 		if (headNode == null)
 			return null;
-		return headNode.value;
+		return headNode.getValue();
 	}
 	
-	public Object getTailValue(){
+	public T getTailValue(){
 		if (tailNode == null)
 			return null;
-		return tailNode.value;
+		return tailNode.getValue();
 	}
 	
-	public void addAtHead(int o) {
+	public void addAtHead(T o) {
 		Node newNode = new Node(o); 
 		newNode.setNextNode(headNode); 
 		if (headNode != null)
@@ -69,7 +69,7 @@ public class DLinkedList {
 			tailNode = newNode;
 	}
 
-	public void addAtTail(int o) {
+	public void addAtTail(T o) {
 		Node newNode = new Node(o);
 		// this means that headNode == null too!
 		if(tailNode == null){
@@ -82,7 +82,7 @@ public class DLinkedList {
 		}
 	}
 		
-	public Object deleteAtHead() {
+	public T deleteAtHead() {
 		// list is empty 
 		if(headNode == null){
 			headNode = null;
@@ -91,19 +91,19 @@ public class DLinkedList {
 		}
 		// singleton: must update tailnode too
 		if(headNode == tailNode){
-			Object res = headNode.getValue();
+			T res = headNode.getValue();
 			headNode = null;
 			tailNode = null;
 			return res;
 		}
 		
-		Object res = headNode.getValue();
+		T res = headNode.getValue();
 		headNode = headNode.getNextNode();
 		headNode.setPrevNode(null);
 		return res;
 	}
 
-	public Object deleteAtTail() {
+	public T deleteAtTail() {
 		// list is empty 
 		if(tailNode == null){
 			headNode = null;
@@ -112,19 +112,16 @@ public class DLinkedList {
 		}
 		// singleton: must update tailnode too
 		if(headNode == tailNode){
-			Object res = tailNode.getValue();
+			T res = tailNode.getValue();
 			headNode = null;
 			tailNode = null;
 			return res;
 		}
-		Object res = tailNode.getValue();
+		T res = tailNode.getValue();
 		tailNode = tailNode.getPrevNode();
 		tailNode.setNextNode(null);
 		return res;
 	}
-
-	
-
 }
 
 

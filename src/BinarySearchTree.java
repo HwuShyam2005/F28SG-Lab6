@@ -1,5 +1,5 @@
 public class BinarySearchTree {
-	
+
 	private class BSTNode { // private class to hold a tree node
 
 		private int value;
@@ -67,7 +67,7 @@ public class BinarySearchTree {
 			// lookup somewhere into the left subtree
 			if (v < this.value) {
 				if (this.getLeftChild() == null) {
-					// value v cannot be in the tree 
+					// value v cannot be in the tree
 					return false;
 				} else {
 					// otherwise recurse down the left subtree
@@ -75,7 +75,7 @@ public class BinarySearchTree {
 				}
 			} else if (v > this.value) {
 				if (this.getRightChild() == null) {
-					// value v cannot be in the tree 
+					// value v cannot be in the tree
 					return false;
 				} else {
 					// otherwise recurse down the right subtree
@@ -89,7 +89,7 @@ public class BinarySearchTree {
 
 		// useful for the delete method
 		public BSTNode getLargestValueNode() {
-			// decend down the right subtree until we get the largest value.
+			// descend down the right subtree until we get the largest value.
 			// i.e. until we cannot continue to go down the right subtree
 			if (this.getRightChild() == null) {
 				return this;
@@ -108,51 +108,51 @@ public class BinarySearchTree {
 					this.rightChild = this.getRightChild().delete(v);
 					return this;
 				}
-				
+
 				// go left?
 				else if (v < this.value && this.getLeftChild() != null) {
 					// we're going to update our left child reference
 					this.leftChild = this.getLeftChild().delete(v);
 					return this;
 				}
-				
+
 				// we are trying to delete a non-existent value
 				else {
 					return this;
 				}
 			}
-			
+
 			// this is the node we want to remove
 			else {
 				// difficult case: does it have two children?
 				if (this.getLeftChild() != null && this.getRightChild() != null) {
-					
+
 					// step 1: find the largest value in the left subtree
 					BSTNode largestLeft = this.getLeftChild().getLargestValueNode();
-					
+
 					// step 2: set this node's value to the value of the largest left node value
 					this.value = largestLeft.getValue();
-					
+
 					// step 3: delete the largest node on left then set Node returned as left child.
 					this.leftChild = this.getLeftChild().delete(largestLeft.getValue());
-					
+
 					return this;
 				}
-				
+
 				// the easy cases
-				
+
 				// has only left subtree
 				else if (this.getLeftChild() != null) {
 					// return to the parent node what this node's left child is
 					return this.getLeftChild();
 				}
-				
+
 				// has only right subtree
 				else if (this.getRightChild() != null) {
 					// return to the parent node what this node's right child is
 					return this.getRightChild();
 				}
-				
+
 				// has no subtrees (is a leaf node)
 				else {
 					System.out.println("Deleting Node with value " + this.value);
@@ -169,34 +169,39 @@ public class BinarySearchTree {
 				valueToReturn += rightChild.numberOfNodes(); // add the nodes in the right subtree
 			return valueToReturn; // return the number of nodes
 		}
-		
-		// Part 1: complete	
-		public void inOrderTraversal(){
-			
+
+		// Part 1: complete
+		public void inOrderTraversalPrint() {
+
 		}
 
-	}	
+		// Part 2: complete
+		public void inOrderTraversal(DLinkedList<Integer> dl) {
+
+		}
+
+	}
 
 	private BSTNode rootNode = null;
 
-	public void insert(int v){ 
-		if (rootNode == null){
+	public void insert(int v) {
+		if (rootNode == null) {
 			rootNode = new BSTNode(v);
-		}else{
+		} else {
 			rootNode.insert(new BSTNode(v));
 		}
 	}
 
-	public void delete(int v){
-		if (rootNode != null){
+	public void delete(int v) {
+		if (rootNode != null) {
 			rootNode = rootNode.delete(v);
 		}
 	}
 
-	public boolean search(int v){
-		if (rootNode != null){
+	public boolean search(int v) {
+		if (rootNode != null) {
 			return rootNode.search(v);
-		}else{
+		} else {
 			return false;
 		}
 	}
@@ -212,19 +217,23 @@ public class BinarySearchTree {
 			return rootNode.numberOfNodes();
 		}
 	}
-	
+
 	// Part 1
-	public void inOrderTraversal(){
+	public void inOrderTraversalPrint() {
 		if (rootNode != null)
-			rootNode.inOrderTraversal();
+			rootNode.inOrderTraversalPrint();
 	}
 
 	// Part 2: complete
-	public DLinkedList returnInOrderTraversal(){
-		return null; // dummy: complete
+	public DLinkedList<Integer> inOrderTraversal() {
+		DLinkedList<Integer> dll = new DLinkedList<>();
+		/* your code goes here */
+
+		/* remove this */
+		return null;
 	}
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
 
 		System.out.println("******* Tree 1 : 3 nodes ***********");
 		BinarySearchTree bst1 = new BinarySearchTree();
@@ -234,12 +243,12 @@ public class BinarySearchTree {
 		bst1.insert(4);
 		bst1.inOrderTraversal();
 
-		System.out.println("******* Tree 2 : 1 node ***********");		
+		System.out.println("******* Tree 2 : 1 node ***********");
 		BinarySearchTree bst2 = new BinarySearchTree();
 		bst2.insert(1);
 		bst2.inOrderTraversal();
 
-		System.out.println("******* Tree 3 : empty ***********");		
+		System.out.println("******* Tree 3 : empty ***********");
 		BinarySearchTree bst3 = new BinarySearchTree();
 		bst3.inOrderTraversal();
 

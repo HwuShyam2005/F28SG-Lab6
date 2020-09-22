@@ -32,8 +32,8 @@ public class PriorityQueueTest {
 	public void removeMinTest() {
 		// step 1: add a few numbers to pq
 		
-		// step 2: call pq.removeMin() to check numbers outputted
-		//         in ascending order 
+		// step 2: call pq.removeMin() a few times to check
+		//         numbers are returned in ascending order 
 		fail("not implemented yet");
 	}
 	
