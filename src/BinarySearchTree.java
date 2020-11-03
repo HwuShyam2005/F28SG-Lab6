@@ -241,16 +241,16 @@ public class BinarySearchTree {
 		bst1.insert(2);
 		bst1.insert(3);
 		bst1.insert(4);
-		bst1.inOrderTraversal();
+		bst1.inOrderTraversalPrint();
 
 		System.out.println("******* Tree 2 : 1 node ***********");
 		BinarySearchTree bst2 = new BinarySearchTree();
 		bst2.insert(1);
-		bst2.inOrderTraversal();
+		bst2.inOrderTraversalPrint();
 
 		System.out.println("******* Tree 3 : empty ***********");
 		BinarySearchTree bst3 = new BinarySearchTree();
-		bst3.inOrderTraversal();
+		bst3.inOrderTraversalPrint();
 
 	}
 }
