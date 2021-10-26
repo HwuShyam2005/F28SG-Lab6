@@ -176,7 +176,7 @@ public class BinarySearchTree {
 		}
 
 		// Part 2: complete
-		public void inOrderTraversal(DLinkedList<Integer> dl) {
+		public void inOrderTraversal(DLinkedList dl) {
 
 		}
 
@@ -235,22 +235,33 @@ public class BinarySearchTree {
 
 	public static void main(String[] args) {
 
-		System.out.println("******* Tree 1 : 3 nodes ***********");
+		System.out.println("******* Tree 1 : empty   ***********");
 		BinarySearchTree bst1 = new BinarySearchTree();
-		bst1.insert(1);
-		bst1.insert(2);
-		bst1.insert(3);
-		bst1.insert(4);
 		bst1.inOrderTraversalPrint();
-
-		System.out.println("******* Tree 2 : 1 node ***********");
+		
+		System.out.println("******* Tree 2 : 1 node  ***********");
 		BinarySearchTree bst2 = new BinarySearchTree();
 		bst2.insert(1);
 		bst2.inOrderTraversalPrint();
-
-		System.out.println("******* Tree 3 : empty ***********");
+		
+		System.out.println("******* Tree 3 : 4 nodes ***********");
 		BinarySearchTree bst3 = new BinarySearchTree();
+		bst3.insert(1);
+		bst3.insert(2);
+		bst3.insert(3);
+		bst3.insert(4);
 		bst3.inOrderTraversalPrint();
+		
+		System.out.println("******* Tree 4 : 7 nodes ***********");
+		BinarySearchTree bst4 = new BinarySearchTree();
+		bst4.insert(5);
+		bst4.insert(2);
+		bst4.insert(1);
+		bst4.insert(6);
+		bst4.insert(3);
+		bst4.insert(8);
+		bst4.insert(7);
+		bst4.inOrderTraversalPrint();
 
 	}
 }
