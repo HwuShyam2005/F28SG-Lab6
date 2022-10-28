@@ -12,7 +12,7 @@ public class SortTest {
 	}
 
 	@Test
-	public void testQ2Empty() {
+	public void testSortEmpty() {
 		int[] arr = {};
 		Sort.sort(arr);
 		assertTrue(isSorted(arr));
@@ -20,7 +20,7 @@ public class SortTest {
 	}
 
 	@Test
-	public void testQ2() {
+	public void testSortUnordered() {
 		int[] arr = { 1, 5, 2, 4, 9, 8, 3, 6 };
 		Sort.sort(arr);
 		assertTrue(isSorted(arr));
@@ -28,7 +28,7 @@ public class SortTest {
 	}
 
 	@Test
-	public void testpreSortedQ2() {
+	public void testSortOrdered() {
 		int[] arr = { 1, 2, 3, 4, 5, 6, 8, 9 };
 		Sort.sort(arr);
 		assertTrue(isSorted(arr));
