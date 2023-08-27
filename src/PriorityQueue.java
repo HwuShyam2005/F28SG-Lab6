@@ -6,7 +6,7 @@ class PriorityQueueException extends RuntimeException{
 	}
 }
 
-public class PriorityQueue {
+public class PriorityQueue implements PriorityQueueADT {
 	
 	private int[] heap;
 	int last;
