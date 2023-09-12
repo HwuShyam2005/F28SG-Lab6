@@ -47,6 +47,9 @@ public class PriorityQueue implements PriorityQueueADT {
 		upHeap();
 	}
 	
+	/*
+	 * Returns the index of the smaller child for a given parent node
+	 */
 	private int findMin(int ind){
 		// if only one child
 		if(ind+1 > last)
@@ -57,6 +60,9 @@ public class PriorityQueue implements PriorityQueueADT {
 			return ind+1;
 	}
 	
+	/*
+	 * Swaps two values in the heap array at positions 'i' and 'j'
+	 */
 	private void swap(int i,int j){
 		int tmp = heap[i];
 		heap[i] = heap[j];
