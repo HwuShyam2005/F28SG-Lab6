@@ -4,6 +4,14 @@ public class Sort {
 	/*
 	 * Part 4: complete method
 	 */
+	/**
+	 * Sorts an array using a priority queue.
+	 * 
+	 * The effect of calling this method is that the input 'arr' array is
+	 * updated in-place, rather than creating a new array holding the sorted value.
+	 * 
+	 * @param arr the array to be sorted in-place
+	 */
 	public static void sort(int[] arr){	
 
 	}
