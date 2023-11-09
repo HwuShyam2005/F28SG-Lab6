@@ -1,4 +1,3 @@
-
 public class Sort {
 
 	/*
@@ -13,13 +12,24 @@ public class Sort {
 	 * @param arr the array to be sorted in-place
 	 */
 	public static void sort(int[] arr){	
+		//CREATING A QUEUE WITH A SIMILAR LENGTH AS THE ARRAY
+		PriorityQueue pq = new PriorityQueue(arr.length);
+		//USING INSERT METHOD TO PUT THE VALUES OF GIVEN ARRAY INTO QUEUE
+		for (int value :arr) {
+			pq.insert(value);
+		}
+		//USING THE FOR LOOP TO REMOVE THE LOWEST NUMBERS FROM THE PRIORITY QUEUE
+		//AND UPDATING THE ARR ARRAY WITH SORTED ORDER USING THE REMOVEMIN METHOD
+		for(int i=0; i<arr.length; i++){
+			arr[i] = pq.removeMin();
+		}
+}
 
-	}
 	
 	public static void main(String[] args){
 		int[] arr = {53,3,5,2,4,67};
 		Sort.sort(arr);
-		// should be printed in order
+		//IT SHOULD BE PRINTED IN ORDER
 		System.out.println(arr[0]);
 		System.out.println(arr[1]);	
 		System.out.println(arr[2]);

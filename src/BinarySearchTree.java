@@ -172,11 +172,27 @@ public class BinarySearchTree {
 
 		// Part 1: complete
 		public void inOrderTraversalPrint() {
+			//traversing the left child subtree
+			if(this.getLeftChild()!=null)
+				this.getLeftChild().inOrderTraversalPrint();
+			//the value of the current node is added to the linked list
+			System. out.println(this.getValue()) ;
+			//traversing the right child subtree
+			if (this.getRightChild()!=null)
+				this.getRightChild () .inOrderTraversalPrint();
 
 		}
 
 		// Part 2: complete
 		public void inOrderTraversal(DLinkedList dl) {
+			//traversing the left child sub tree
+			if(this.getLeftChild()!=null)
+				this.getLeftChild().inOrderTraversal(dl);
+			//the value of the current node is added to the linked list
+			dl.addAtTail(this.getValue()); 
+			//traversing the right child subtree
+			if (this.getRightChild()!=null)
+				this.getRightChild().inOrderTraversal(dl); 
 
 		}
 
